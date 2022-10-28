@@ -1,0 +1,14 @@
+{
+  "name": "composite-payment-demo",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "blocklet dev",
+    "clean": "rm -rf .blocklet",
+    "bundle": "npm run clean && blocklet bundle --zip --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle --skip-hooks",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
