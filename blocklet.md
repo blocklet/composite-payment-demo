@@ -1,3 +1,1 @@
-# template-html
-
-A html template for creating a new blocklet project.
+This demo blocklet shows how to put paid blocklets together

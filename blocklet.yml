@@ -1,12 +1,13 @@
 name: composite-payment-demo
-title: composite-payment-demo
-description: A Blocklet Server blocklet
+did: z8ia4AMogw2z8Yj1GTq1muCzAsTovRodTrgGB
+title: Composite Payment Demo
+description: This demo blocklet shows how to put paid blocklets together
+version: 1.0.1
 keywords:
   - blocklet
   - html
   - static
 group: static
-did: z8ia4AMogw2z8Yj1GTq1muCzAsTovRodTrgGB
 main: app
 author:
   name: linchen
@@ -15,7 +16,6 @@ repository:
   type: git
   url: git+https://github.com/blocklet/create-blocklet.git
 specVersion: 1.1.1
-version: 0.1.0
 logo: logo.png
 files:
   - logo.png
@@ -24,23 +24,38 @@ interfaces:
   - type: web
     name: publicUrl
     path: /
-    prefix: "*"
+    prefix: '*'
     port: BLOCKLET_PORT
     protocol: http
-community: ""
-documentation: ""
-homepage: ""
-license: ""
+community: ''
+documentation: ''
+homepage: ''
+license: ''
 payment:
-  price: []
-  share: []
+  price:
+    - address: z35n3WVTnN7KrR4gXn3szR6oneVefkBBx78Fc
+      value: 12
+  componentPrice:
+    - parentPriceRange:
+        - 0
+        - 6
+      type: fixed
+      value: 3
+    - type: percentage
+      value: 0.6
 timeout:
   start: 60
 requirements:
-  server: ">=1.6.29"
-  os: "*"
-  cpu: "*"
+  server: '>=1.6.29'
+  os: '*'
+  cpu: '*'
 environments: []
 capabilities: {}
 screenshots: []
-components: []
+components:
+  - name: payment-demo-blocklet
+    mountPoint: /payment-demo
+    source:
+      store: https://dev.store.blocklet.dev
+      name: payment-demo-blocklet
+      version: latest
